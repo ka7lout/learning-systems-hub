@@ -1,0 +1,3 @@
+# Database
+PostgreSQL via Drizzle (`src/db/schema.ts`). Content tables: curriculum_nodes, node_prerequisites, skills, node_skills, sources, practice_items, project_catalog, career_roles, role_requirements, english_terms. Owner-scoped tables: settings, practice_attempts, mastery_records, review_items, learning_sessions, later_items, user_projects, project_evidence, skill_evidence, activity_attempts, ai_threads, ai_messages. Identity: users, sessions. audit_logs.
+Seeding is idempotent (`npx tsx scripts/seed.ts`); the app also seeds on first request if `curriculum_nodes` is empty. Backups: use the provider's automated snapshots; content is reproducible from code, learner data is not — back it up.

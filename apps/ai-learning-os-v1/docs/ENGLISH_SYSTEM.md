@@ -1,0 +1,2 @@
+# English system
+Default: Standard Technical English. Modes: B1–B2 (mentor rewrites keeping canonical terms), Arabic (mentor), Vocabulary Assistance (hover glosses from `english_terms`: simple definition, Arabic, example), English Training (speaking/writing simulations with honest rubric self-check; no invented pronunciation scores). Dimensions tracked only through evidence (oral, writing attempts); vocabulary count never maps to a CEFR level.

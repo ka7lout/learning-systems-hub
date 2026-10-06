@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-ink-50: #f8fafc;
+  --color-ink-100: #f1f5f9;
+  --color-ink-200: #e2e8f0;
+  --color-ink-300: #cbd5e1;
+  --color-ink-400: #94a3b8;
+  --color-ink-500: #64748b;
+  --color-ink-600: #475569;
+  --color-ink-700: #334155;
+  --color-ink-800: #1e293b;
+  --color-ink-900: #0f172a;
+  --color-ink-950: #020617;
+
+  --color-navy-50: #eff4ff;
+  --color-navy-100: #dbe6fe;
+  --color-navy-200: #bfd2fe;
+  --color-navy-300: #93b2fd;
+  --color-navy-400: #6089f9;
+  --color-navy-500: #3b63f3;
+  --color-navy-600: #2443e5;
+  --color-navy-700: #1d33d1;
+  --color-navy-800: #1e2ca9;
+  --color-navy-900: #1e2b85;
+  --color-navy-950: #171d52;
+
+  --color-accent-500: #0ea5e9;
+  --color-accent-600: #0284c7;
+
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-warn-500: #f59e0b;
+  --color-warn-600: #d97706;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: 248 250 252;
+  --surface: 255 255 255;
+  --surface-alt: 241 245 249;
+  --border: 226 232 240;
+  --text: 15 23 42;
+  --text-muted: 71 85 105;
+  --text-subtle: 100 116 139;
+  --accent: 36 67 229;
+  --accent-soft: 219 230 254;
+}
+
+.dark {
+  --background: 7 11 21;
+  --surface: 15 23 42;
+  --surface-alt: 20 30 48;
+  --border: 30 41 59;
+  --text: 241 245 249;
+  --text-muted: 203 213 225;
+  --text-subtle: 148 163 184;
+  --accent: 96 137 249;
+  --accent-soft: 30 44 169;
+}
+
+html, body {
+  background: rgb(var(--background));
+  color: rgb(var(--text));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgb(var(--border)); border-radius: 10px; border: 2px solid rgb(var(--background)); }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--text-subtle)); }
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Prose overrides for lesson content */
+.lesson-content h1 { font-size: 1.875rem; font-weight: 700; margin-top: 1.5em; margin-bottom: 0.75em; letter-spacing: -0.02em; color: rgb(var(--text)); }
+.lesson-content h2 { font-size: 1.5rem; font-weight: 600; margin-top: 1.5em; margin-bottom: 0.5em; letter-spacing: -0.01em; color: rgb(var(--text)); }
+.lesson-content h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.25em; margin-bottom: 0.5em; color: rgb(var(--text)); }
+.lesson-content p { margin-bottom: 1em; line-height: 1.75; color: rgb(var(--text-muted)); }
+.lesson-content ul { list-style: disc; padding-left: 1.5em; margin-bottom: 1em; }
+.lesson-content ol { list-style: decimal; padding-left: 1.5em; margin-bottom: 1em; }
+.lesson-content li { margin-bottom: 0.35em; line-height: 1.65; color: rgb(var(--text-muted)); }
+.lesson-content code { background: rgb(var(--surface-alt)); padding: 0.15em 0.4em; border-radius: 4px; font-family: var(--font-mono); font-size: 0.875em; color: rgb(var(--text)); }
+.lesson-content pre { background: rgb(var(--surface-alt)); padding: 1em; border-radius: 8px; overflow-x: auto; margin-bottom: 1em; border: 1px solid rgb(var(--border)); }
+.lesson-content pre code { background: transparent; padding: 0; }
+.lesson-content strong { color: rgb(var(--text)); font-weight: 600; }
+.lesson-content blockquote { border-left: 3px solid rgb(var(--accent)); padding-left: 1em; margin: 1em 0; color: rgb(var(--text-subtle)); font-style: italic; }
+.lesson-content a { color: rgb(var(--accent)); text-decoration: underline; text-underline-offset: 3px; }
+.lesson-content a:hover { opacity: 0.8; }
+.lesson-content table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.9em; }
+.lesson-content th { text-align: left; padding: 0.5em 0.75em; border-bottom: 2px solid rgb(var(--border)); font-weight: 600; color: rgb(var(--text)); }
+.lesson-content td { padding: 0.5em 0.75em; border-bottom: 1px solid rgb(var(--border)); color: rgb(var(--text-muted)); }
+
+.reduced-motion * {
+  animation: none !important;
+  transition: none !important;
+}
+
+@keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fade-in 0.3s ease-out; }

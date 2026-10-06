@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --canvas: #f3f5f8;
+  --surface: #ffffff;
+  --surface-muted: #eef1f6;
+  --line: #d9dfe8;
+  --line-strong: #c2cad6;
+  --ink: #111826;
+  --ink-soft: #46506180;
+  --muted: #5a6474;
+  --accent: #15325e;
+  --accent-soft: #e6ecf6;
+  --accent-ink: #1d4e89;
+  --good: #1f6b4a;
+  --warn: #8a5a12;
+  --bad: #9b2c2c;
+}
+
+.dark {
+  --canvas: #0e141d;
+  --surface: #151d29;
+  --surface-muted: #1b2533;
+  --line: #27313f;
+  --line-strong: #35404f;
+  --ink: #e7ecf3;
+  --ink-soft: #9aa6b680;
+  --muted: #9aa6b6;
+  --accent: #9dc0ef;
+  --accent-soft: #1b2b42;
+  --accent-ink: #b8d2f5;
+  --good: #6fcf9a;
+  --warn: #e0b267;
+  --bad: #f09393;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surfacemuted: var(--surface-muted);
+  --color-line: var(--line);
+  --color-linestrong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accentsoft: var(--accent-soft);
+  --color-accentink: var(--accent-ink);
+  --color-good: var(--good);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, ui-sans-serif, system-ui,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+a,
+button,
+[tabindex] {
+  outline-color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
+}
+
+.prose-block p {
+  margin-bottom: 0.75rem;
+}
+
+pre,
+code {
+  font-family: var(--font-mono);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

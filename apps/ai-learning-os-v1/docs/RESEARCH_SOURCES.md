@@ -1,0 +1,2 @@
+# Research sources
+The canonical registry is `src/content/harvard.ts` (`SOURCES`, 42 records) and is shown in-app under Research → Source registry with statuses and retrieval dates. Retrieved in this build session (2026-10-05): Harvard CS concentration requirements; Harvard CS course tags; CS50 Fall 2026 College syllabus; Harvard Extension AI Graduate Certificate; Puter OpenAI-compatible API tutorial. All other listed URLs are recorded as likely_not_verified / confirmed_historical and nothing from them is presented as a current fact.

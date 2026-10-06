@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-ink: #10172a;
+  --color-muted: #5a6478;
+  --color-line: #dfe4ea;
+  --color-navy: #10243f;
+  --color-accent: #1d4ed8;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter,
+    ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+:root {
+  --canvas: #f4f6f8;
+  --surface: #ffffff;
+  --surface-2: #eef1f5;
+  --ink: #10172a;
+  --muted: #5a6478;
+  --line: #dfe4ea;
+  --accent: #1d4ed8;
+  --accent-soft: #e8eefc;
+  --warn: #8a5a00;
+  --warn-soft: #fdf3e0;
+  --ok: #1f6b4a;
+  --ok-soft: #e6f2ec;
+}
+
+html[data-theme="dark"] {
+  --canvas: #0d1320;
+  --surface: #141c2b;
+  --surface-2: #1b2435;
+  --ink: #e8ecf3;
+  --muted: #9aa6ba;
+  --line: #27324a;
+  --accent: #7aa2f7;
+  --accent-soft: #1b2744;
+  --warn: #e0b060;
+  --warn-soft: #2b2314;
+  --ok: #7fcaa5;
+  --ok-soft: #14291f;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+html[data-density="compact"] .prose-block { line-height: 1.55; }
+html[data-text="large"] { font-size: 17.5px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+html[data-motion="reduced"] * { transition: none !important; animation: none !important; }
+
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.muted { color: var(--muted); }
+.line { border-color: var(--line); }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 7px;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.btn:hover { background: var(--surface-2); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+html[data-theme="dark"] .btn-primary { color: #0d1320; }
+.btn-primary:hover { filter: brightness(1.06); background: var(--accent); }
+
+.field {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-family: inherit;
+}
+textarea.field { font-family: var(--font-mono); font-size: 0.83rem; line-height: 1.6; }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 0.14rem 0.45rem;
+  border-radius: 5px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.tag-accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.tag-warn { background: var(--warn-soft); color: var(--warn); border-color: transparent; }
+.tag-ok { background: var(--ok-soft); color: var(--ok); border-color: transparent; }
+
+pre.code {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.65;
+  white-space: pre;
+}
+
+.prose-block { line-height: 1.75; font-size: 0.95rem; }
+.prose-block strong { font-weight: 600; }
+
+abbr.term {
+  text-decoration: underline dotted var(--muted);
+  text-underline-offset: 3px;
+  cursor: help;
+}
+
+.bar { height: 5px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--accent); }

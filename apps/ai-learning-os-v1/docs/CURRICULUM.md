@@ -1,0 +1,5 @@
+# Curriculum
+See `src/content/original.ts` (Modules 1–8 verbatim, session mapping notes), `src/content/harvard.ts` (Harvard course registry with statuses, per-section mapping table, 22 stages, 33 additive lessons, prerequisite DAG) and `src/content/catalog.ts` (skills, projects, roles, English terms, simulations).
+
+Harvard reality check (verified 2026-10-05 from official pages): Harvard College offers a Computer Science concentration (basic 9 core courses / honors 11, tag system) — not an "AI Engineering" bachelor's. The AI tag is currently borne by CS 1810, CS 1820, CS 1870, AM 220. Harvard Extension offers a four-course AI Graduate Certificate (foundations; advanced NLP & ML; deep learning & CV; AI ethics, governance & law). Extension course identifiers CSCI E-25/E-89/E-104/E-222 and the DS&AI master's requirements were not re-verified in this session and are labelled accordingly.
+Classification is not deletion: Excel/Power BI, scraping, Selenium, FastAPI, Streamlit, Docker, XGBoost/CatBoost, YOLO, LoRA/QLoRA remain in the master curriculum as original/industry layers.
