@@ -1,14 +1,36 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": [
+    "DATABASE_URL",
+    "MONGODB_URI",
+    "PUTER_AUTH_TOKEN",
+    "PUTER_MODEL_NAME",
+    "AUTH_SECRET",
+    "NEXT_PUBLIC_IHLS_URL",
+    "NEXT_PUBLIC_AI_LEARNING_OS_V1_URL",
+    "NEXT_PUBLIC_AI_LEARNING_OS_V2_URL",
+    "NEXT_PUBLIC_AI_LEARNING_OS_V3_URL",
+    "NEXT_PUBLIC_AI_LEARNING_GEMINIFLASH_URL",
+    "NEXT_PUBLIC_AI_LEARNING_SPEC_V1_URL",
+    "NEXT_PUBLIC_AI_LEARNING_SPEC_V3_URL",
+    "NEXT_PUBLIC_AI_LEARNING_SPEC_V4_URL",
+    "NEXT_PUBLIC_AI_LEARNING_SPEC_GPT6_URL",
+    "NEXT_PUBLIC_AI_ENGINEERING_OPTIONB_URL",
+    "NEXT_PUBLIC_ADAPTIVE_STUDY_V1_URL",
+    "NEXT_PUBLIC_ADAPTIVE_STUDY_V2_URL"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "lint": {}
+    }
   }
 }
