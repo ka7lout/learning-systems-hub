@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { db } from "@/db";
 import { courses, concepts, modules, topics, lessons, lessonProgress } from "@/db/schema";
-import { eq, asc } from "drizzle-orm";
+import { eq, asc, inArray } from "drizzle-orm";
 import { CourseDetail } from "@/components/courses/CourseDetail";
 
 interface CoursePageProps {
@@ -18,10 +18,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
     notFound();
   }
 
-  // Fetch course data
-  const [courseModules, courseTopics, courseConcepts, courseLessons, courseProgress] = await Promise.all([
-    db.select().from(modules).where(eq(modules.courseId, id)).orderBy(asc(modules.displayOrder)),
-    db.select().from(topics).where(eq(topics.moduleId, id)).orderBy(asc(topics.displayOrder)),
+  // Fetch course modules first
+  const courseModules = await db.select().from(modules).where(eq(modules.courseId, id)).orderBy(asc(modules.displayOrder));
+  const moduleIds = courseModules.map((m) => m.id);
+
+  // Fetch related topics, concepts, lessons, progress
+  const [courseTopics, courseConcepts, courseLessons, courseProgress] = await Promise.all([
+    moduleIds.length > 0
+      ? db.select().from(topics).where(inArray(topics.moduleId, moduleIds)).orderBy(asc(topics.displayOrder))
+      : Promise.resolve([]),
     db.select().from(concepts).where(eq(concepts.courseId, id)).orderBy(asc(concepts.displayOrder)),
     db.select().from(lessons).where(eq(lessons.courseId, id)).orderBy(asc(lessons.displayOrder)),
     db.select().from(lessonProgress).where(eq(lessonProgress.userId, "default-user")),

@@ -26,7 +26,7 @@ const projects = [
     tagClasses: ["tag-mongo", "tag-ai", "tag-drizzle"],
     icon: Brain,
     gradient: "linear-gradient(135deg, #3b82f6, #8b5cf6)",
-    url: process.env.NEXT_PUBLIC_IHLS_URL || "#",
+    url: process.env.NEXT_PUBLIC_IHLS_URL || "https://lsh-ihls.vercel.app",
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-drizzle", "tag-auth"],
     icon: BookOpen,
     gradient: "linear-gradient(135deg, #06b6d4, #3b82f6)",
-    url: process.env.NEXT_PUBLIC_AI_LEARNING_OS_V1_URL || "#",
+    url: process.env.NEXT_PUBLIC_AI_LEARNING_OS_V1_URL || "https://lsh-ai-learning-os-v1.vercel.app",
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-drizzle", "tag-auth"],
     icon: Layers,
     gradient: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-    url: process.env.NEXT_PUBLIC_AI_LEARNING_OS_V2_URL || "#",
+    url: process.env.NEXT_PUBLIC_AI_LEARNING_OS_V2_URL || "https://lsh-ai-learning-os-v2.vercel.app",
   },
   {
     id: 4,
@@ -62,7 +62,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-ai", "tag-drizzle"],
     icon: Rocket,
     gradient: "linear-gradient(135deg, #f59e0b, #ef4444)",
-    url: process.env.NEXT_PUBLIC_AI_LEARNING_OS_V3_URL || "#",
+    url: process.env.NEXT_PUBLIC_AI_LEARNING_OS_V3_URL || "https://lsh-ai-learning-os-v3.vercel.app",
   },
   {
     id: 5,
@@ -74,7 +74,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-ai", "tag-drizzle"],
     icon: Zap,
     gradient: "linear-gradient(135deg, #10b981, #06b6d4)",
-    url: process.env.NEXT_PUBLIC_AI_LEARNING_GEMINIFLASH_URL || "#",
+    url: process.env.NEXT_PUBLIC_AI_LEARNING_GEMINIFLASH_URL || "https://lsh-ai-learning-geminiflash.vercel.app",
   },
   {
     id: 6,
@@ -86,7 +86,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-ai", "tag-drizzle"],
     icon: Target,
     gradient: "linear-gradient(135deg, #ec4899, #8b5cf6)",
-    url: process.env.NEXT_PUBLIC_AI_LEARNING_SPEC_V1_URL || "#",
+    url: process.env.NEXT_PUBLIC_AI_LEARNING_SPEC_V1_URL || "https://lsh-ai-learning-spec-v1.vercel.app",
   },
   {
     id: 7,
@@ -98,7 +98,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-drizzle", "tag-auth"],
     icon: Shield,
     gradient: "linear-gradient(135deg, #06b6d4, #10b981)",
-    url: process.env.NEXT_PUBLIC_AI_LEARNING_SPEC_V3_URL || "#",
+    url: process.env.NEXT_PUBLIC_AI_LEARNING_SPEC_V3_URL || "https://lsh-ai-learning-spec-v3.vercel.app",
   },
   {
     id: 8,
@@ -110,7 +110,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-ai", "tag-drizzle"],
     icon: GraduationCap,
     gradient: "linear-gradient(135deg, #f59e0b, #f43f5e)",
-    url: process.env.NEXT_PUBLIC_AI_LEARNING_SPEC_V4_URL || "#",
+    url: process.env.NEXT_PUBLIC_AI_LEARNING_SPEC_V4_URL || "https://lsh-ai-learning-spec-v4.vercel.app",
   },
   {
     id: 9,
@@ -122,7 +122,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-auth", "tag-ai"],
     icon: Sparkles,
     gradient: "linear-gradient(135deg, #a855f7, #ec4899)",
-    url: process.env.NEXT_PUBLIC_AI_LEARNING_SPEC_GPT6_URL || "#",
+    url: process.env.NEXT_PUBLIC_AI_LEARNING_SPEC_GPT6_URL || "https://lsh-ai-learning-spec-gpt6.vercel.app",
   },
   {
     id: 10,
@@ -134,7 +134,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-auth", "tag-drizzle"],
     icon: Code,
     gradient: "linear-gradient(135deg, #3b82f6, #10b981)",
-    url: process.env.NEXT_PUBLIC_AI_ENGINEERING_OPTIONB_URL || "#",
+    url: process.env.NEXT_PUBLIC_AI_ENGINEERING_OPTIONB_URL || "https://lsh-ai-engineering-optionb.vercel.app",
   },
   {
     id: 11,
@@ -146,7 +146,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-drizzle", "tag-auth"],
     icon: Database,
     gradient: "linear-gradient(135deg, #14b8a6, #3b82f6)",
-    url: process.env.NEXT_PUBLIC_ADAPTIVE_STUDY_V1_URL || "#",
+    url: process.env.NEXT_PUBLIC_ADAPTIVE_STUDY_V1_URL || "https://lsh-adaptive-study-v1.vercel.app",
   },
   {
     id: 12,
@@ -158,7 +158,7 @@ const projects = [
     tagClasses: ["tag-postgres", "tag-drizzle", "tag-auth"],
     icon: Globe,
     gradient: "linear-gradient(135deg, #e879f9, #3b82f6)",
-    url: process.env.NEXT_PUBLIC_ADAPTIVE_STUDY_V2_URL || "#",
+    url: process.env.NEXT_PUBLIC_ADAPTIVE_STUDY_V2_URL || "https://lsh-adaptive-study-v2.vercel.app",
   },
 ];
 

@@ -15,7 +15,13 @@ import "dotenv/config";
 import { Pool } from "pg";
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-const q = (text, params = []) => pool.query(text, params);
+const q = (text, params = []) => {
+  const prefixed = text.replace(
+    /\b(courses|modules|topics|concepts|prerequisites|lessons|questions|assessments|source_inventory)\b/g,
+    "adaptive_study_v2_$1"
+  );
+  return pool.query(prefixed, params);
+};
 
 async function main() {
   const { rows } = await q("select count(*)::int as c from courses");

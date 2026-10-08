@@ -34,7 +34,7 @@ export function ensureSeed() {
 async function runSeed() {
   const errs = validateCurriculum();
   if (errs.length) throw new Error("Curriculum validation failed: " + errs.join("; "));
-  const res = await db.execute(sql`select count(*)::int as c from curriculum_nodes where version = ${SEED_VERSION}`);
+  const res = await db.execute(sql`select count(*)::int as c from ${nodes} where version = ${SEED_VERSION}`);
   const count = Number((res.rows[0] as { c: number }).c);
   if (count === MODULES.length + UNITS.length) return;
 
