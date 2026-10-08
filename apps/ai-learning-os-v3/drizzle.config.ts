@@ -11,5 +11,6 @@ export default defineConfig({
   dialect: "postgresql",
   schema: "./src/db/schema.ts",
   dbCredentials: { url: databaseUrl },
+  tablesFilter: ["ai_learning_os_v3_*"],
 });
 

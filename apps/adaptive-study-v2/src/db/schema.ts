@@ -9,8 +9,8 @@
 // and verification_status = 'unverified' because they have not yet been verified
 // against the student's actual Google Drive source.
 
-import {
-  pgTable,
+import { 
+  pgTableCreator,
   text,
   uuid,
   integer,
@@ -20,7 +20,9 @@ import {
   jsonb,
   date,
   index,
-} from "drizzle-orm/pg-core";
+ } from "drizzle-orm/pg-core";
+
+export const pgTable = pgTableCreator((name) => "adaptive_study_v2_" + name);
 
 const id = uuid("id").defaultRandom().primaryKey();
 const createdAt = timestamp("created_at").defaultNow().notNull();

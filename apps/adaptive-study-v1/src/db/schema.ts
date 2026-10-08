@@ -1,5 +1,5 @@
-import { 
-  pgTable, 
+import {  
+  pgTableCreator, 
   uuid, 
   text, 
   integer, 
@@ -11,7 +11,9 @@ import {
   primaryKey,
   index,
   uniqueIndex
-} from "drizzle-orm/pg-core";
+ } from "drizzle-orm/pg-core";
+
+export const pgTable = pgTableCreator((name) => "adaptive_study_v1_" + name);
 
 // ============================================
 // USERS & PROFILES

@@ -1,12 +1,14 @@
-import {
-  pgTable,
+import { 
+  pgTableCreator,
   text,
   integer,
   boolean,
   timestamp,
   jsonb,
   doublePrecision,
-} from "drizzle-orm/pg-core";
+ } from "drizzle-orm/pg-core";
+
+export const pgTable = pgTableCreator((name) => "ai_learning_geminiflash_" + name);
 
 // ==========================================
 // 1. Users & Multi-Tenant Session Isolation

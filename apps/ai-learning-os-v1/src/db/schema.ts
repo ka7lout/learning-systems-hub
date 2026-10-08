@@ -1,5 +1,5 @@
-import {
-  pgTable,
+import { 
+  pgTableCreator,
   text,
   integer,
   boolean,
@@ -9,7 +9,9 @@ import {
   real,
   primaryKey,
   index,
-} from "drizzle-orm/pg-core";
+ } from "drizzle-orm/pg-core";
+
+export const pgTable = pgTableCreator((name) => "ai_learning_os_v1_" + name);
 
 /* ------------------------------------------------------------------ */
 /* Identity                                                            */

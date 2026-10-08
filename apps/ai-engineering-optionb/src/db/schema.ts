@@ -1,5 +1,5 @@
-import {
-  pgTable,
+import { 
+  pgTableCreator,
   text,
   varchar,
   integer,
@@ -8,7 +8,9 @@ import {
   jsonb,
   uuid,
   doublePrecision,
-} from "drizzle-orm/pg-core";
+ } from "drizzle-orm/pg-core";
+
+export const pgTable = pgTableCreator((name) => "ai_engineering_optionb_" + name);
 import { relations } from "drizzle-orm";
 
 // ============================================

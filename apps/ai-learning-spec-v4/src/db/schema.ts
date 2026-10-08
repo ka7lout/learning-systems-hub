@@ -1,5 +1,5 @@
-import {
-  pgTable,
+import { 
+  pgTableCreator,
   uuid,
   text,
   timestamp,
@@ -8,7 +8,9 @@ import {
   boolean,
   uniqueIndex,
   index,
-} from "drizzle-orm/pg-core";
+ } from "drizzle-orm/pg-core";
+
+export const pgTable = pgTableCreator((name) => "ai_learning_spec_v4_" + name);
 
 // All learner state. Every student-owned row carries userId derived
 // server-side from the session — never from the client (spec §189).

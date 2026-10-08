@@ -1,15 +1,17 @@
-import {
+import { 
   boolean,
   index,
   integer,
   jsonb,
   numeric,
-  pgTable,
+  pgTableCreator,
   primaryKey,
   text,
   timestamp,
   uniqueIndex,
-} from "drizzle-orm/pg-core";
+ } from "drizzle-orm/pg-core";
+
+export const pgTable = pgTableCreator((name) => "ai_learning_spec_gpt6_" + name);
 
 const now = () => timestamp("created_at", { withTimezone: true }).defaultNow().notNull();
 const updated = () => timestamp("updated_at", { withTimezone: true }).defaultNow().notNull();

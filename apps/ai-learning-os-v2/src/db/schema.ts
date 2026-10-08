@@ -1,4 +1,6 @@
-import { pgTable, text, integer, timestamp, jsonb, boolean, real, serial, primaryKey, index } from "drizzle-orm/pg-core";
+import {  pgTableCreator, text, integer, timestamp, jsonb, boolean, real, serial, primaryKey, index  } from "drizzle-orm/pg-core";
+
+export const pgTable = pgTableCreator((name) => "ai_learning_os_v2_" + name);
 
 export const users = pgTable("users", {
   id: text("id").primaryKey(),

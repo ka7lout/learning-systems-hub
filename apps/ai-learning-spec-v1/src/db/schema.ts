@@ -1,15 +1,17 @@
-import {
+import { 
   boolean,
   index,
   integer,
   jsonb,
-  pgTable,
+  pgTableCreator,
   real,
   serial,
   text,
   timestamp,
   uniqueIndex,
-} from "drizzle-orm/pg-core";
+ } from "drizzle-orm/pg-core";
+
+export const pgTable = pgTableCreator((name) => "ai_learning_spec_v1_" + name);
 
 /* ------------------------------------------------------------------ */
 /* Identity / access                                                   */
