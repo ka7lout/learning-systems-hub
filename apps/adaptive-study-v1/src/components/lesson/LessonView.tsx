@@ -16,6 +16,7 @@ import {
   Pause,
   RotateCcw
 } from "lucide-react";
+import { MathRenderer } from "@/components/common/MathRenderer";
 
 interface Lesson {
   id: string;
@@ -172,9 +173,11 @@ export function LessonView({ lesson, concept, course }: {
         </div>
 
         <div className="prose prose-invert max-w-none">
-          <p className="text-gray-300 leading-relaxed whitespace-pre-wrap">
-            {currentStepData.content || "No content available for this step."}
-          </p>
+          <MathRenderer 
+            content={currentStepData.content || "No content available for this step."}
+            isBlockMathOnly={currentStepData.id === "equation"}
+            className="text-gray-200 text-base leading-relaxed"
+          />
         </div>
 
         {/* Retrieval Step - Special handling */}

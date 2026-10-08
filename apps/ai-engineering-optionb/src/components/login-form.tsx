@@ -22,8 +22,7 @@ export function LoginForm() {
         body: JSON.stringify({ email: email.trim(), name: name.trim() || undefined }),
       });
       if (res.ok) {
-        router.refresh();
-        router.push("/");
+        window.location.href = "/";
       } else {
         const data = await res.json().catch(() => ({}));
         setError(data.error || "Sign-in failed");
