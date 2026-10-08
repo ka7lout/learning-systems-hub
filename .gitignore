@@ -36,5 +36,6 @@ npm-debug.log*
 # Data
 .ihls-data/
 uploads/
-data/
-.env*
+/data/
+!**/src/data/**
+
